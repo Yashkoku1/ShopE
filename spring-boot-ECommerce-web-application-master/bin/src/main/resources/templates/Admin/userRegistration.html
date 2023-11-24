@@ -1,0 +1,31 @@
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <base href="/">
+    <link rel="stylesheet" href="userregister.css">
+    </head>
+    <body>
+      <div class="login">
+        <div class="login-triangle"></div>
+        
+        <h2 class="login-header">Sign Up</h2>
+      
+        <form class="login-container" method="post" action="/Abc/saver">
+          <p><input type="text" placeholder="Name" name="name"></p>
+          <p><input type="text" placeholder="Address" name="addrs"></p>
+
+          <p><input type="email" placeholder="Email" name="email"></p>
+          <p><input type="password" placeholder="Password" name="password"></p>
+          <p><input type="password" placeholder=" Confirm Password" name="cpassword"></p>
+          <p><input type="text" placeholder=" Enter limit" name="limit"></p>
+
+
+          <p><input type="submit" value="Sign Up"></p>
+          <a class="nav-link fl2"  th:href="@{/Abc/signin}"> Sign in...</a>
+        </form>
+      </div>
+
+  </body>
+
+
+</html>

@@ -1,0 +1,168 @@
+
+<!--<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"-->
+<!--      xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+
+<!--    <title>Adimin | Home</title>-->
+
+<!--    &lt;!&ndash; Bootstrap CSS  & FontAwsome&ndash;&gt;-->
+<!--    <base href="/">-->
+<!--    <link href="css/bootstrap.css" rel="stylesheet">-->
+<!--    <link href="font-awesome/css1/all.css" rel="stylesheet">-->
+<!--    <link rel="icon" href="images/icon.png" />-->
+<!--    &lt;!&ndash; Our Custom CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="style4.css">-->
+<!--    <link rel="stylesheet" href="card.css">-->
+<!--    <script type="text/javascript" src="font-awesome/js1/fontawesome.js"></script>-->
+<!--    <script type="text/javascript" src=""></script>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<div class="wrapper">-->
+<!--    &lt;!&ndash; Sidebar  &ndash;&gt;-->
+<!--    <nav  th:fragment="sidebar" id="sidebar">-->
+<!--        <div class="sidebar-header">-->
+<!--            <h3>&nbsp;&nbsp;&nbsp;HANDS CRAFTS</h3>-->
+<!--            <strong><i class="fa fa-shopping-cart" aria-hidden="true"></i></strong>-->
+<!--        </div>-->
+
+<!--        <ul class="list-unstyled components">-->
+<!--            <li class="active"><a href="#homeSubmenu"-->
+<!--                                  data-toggle="collapse" aria-expanded="false"-->
+<!--                                  class="dropdown-toggle"> <i class="fas fa-home"></i> Home-->
+<!--            </a>-->
+<!--                <ul class="collapse list-unstyled" id="homeSubmenu">-->
+<!--                    <li><a href="#">My cart</a></li>-->
+<!--                    <li><a href="#">My wishlist</a></li>-->
+<!--                </ul></li>-->
+<!--            <li><a href="#"> <i class="fas fa-briefcase"></i> About-->
+<!--            </a> <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"-->
+<!--                    class="dropdown-toggle"> <i class="fas fa-copy"></i> pages-->
+<!--            </a>-->
+<!--                <ul class="collapse list-unstyled" id="pageSubmenu">-->
+<!--                    <li><a href="#">category</a></li>-->
+<!--                    <li><a href="#">products</a></li>-->
+<!--                    <li><a href="#">more</a></li>-->
+<!--                </ul></li>-->
+<!--            <li><a href="#"> <i class="fas fa-image"></i> Portfolio-->
+<!--            </a></li>-->
+<!--            <li><a href="#"> <i class="fas fa-question"></i> FAQ-->
+<!--            </a></li>-->
+<!--            <li><a href="#"> <i class="fas fa-paper-plane"></i> Contact-->
+<!--            </a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+
+<!--    &lt;!&ndash; Page Content  &ndash;&gt;-->
+<!--    <div id="content">-->
+<!--        <nav th:fragment="sidebar" class="navbar navbar-expand-lg navbar-light"-->
+<!--             style="border-bottom: 4px solid #7386D5;">-->
+<!--            <div class="container-fluid">-->
+<!--                <button type="button" id="sidebarCollapse"-->
+<!--                        class="btn btn-info mr-4">-->
+<!--                    <i class="fas fa-align-left"></i>-->
+<!--                    &lt;!&ndash; <span>Toggle Sidebar</span> &ndash;&gt;-->
+<!--                </button>-->
+<!--                <form class="form-inline frm">-->
+<!--                    <input class="form-control mr-sm-2" type="search"-->
+<!--                           placeholder="Search" aria-label="Search">-->
+<!--                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--                </form>-->
+<!--                <button class="btn btn-light d-inline-block d-lg-none ml-auto"-->
+<!--                        type="button" data-toggle="collapse"-->
+<!--                        data-target="#navbarSupportedContent"-->
+<!--                        aria-controls="navbarSupportedContent" aria-expanded="false"-->
+<!--                        aria-label="Toggle navigation">-->
+<!--                    <i class="fas fa-align-justify"></i>-->
+<!--                </button>-->
+<!--                <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--                    <ul class="nav navbar-nav ml-auto">-->
+
+<!--                        <li class="nav-item  active"><a class="nav-link btn btn-light mr-2" th:href="@{/Admin/product}"-->
+<!--                        >add Product</a></li>-->
+<!--                        <li class="nav-item"><a onclick=" handleListProduct(event);" class="nav-link btn btn-light mr-2" href="#">Products</a></li>-->
+<!--                        <li class="nav-item"><a class="nav-link btn btn-light" href="#"><i class="fas fa-sign-out-alt"></i></a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
+<!--        <div class="line"></div>-->
+<!--        <div class="container" id="app">-->
+
+<!--            <div class="col-12">-->
+<!--                <h5 class="text-center">list of Orders</h5>-->
+<!--                <hr>-->
+<!--                <table class="table">-->
+<!--                    <thead class="thead-dark">-->
+<!--                    <tr>-->
+<!--                        <th scope="col">ID</th>-->
+<!--                        <th scope="col">DATE</th>-->
+<!--                        <th scope="col">QUANTITY</th>-->
+<!--                        <th scope="col">PRODUCT_NAME</th>-->
+<!--                        <th scope="col">USER_NAME</th>-->
+<!--                        <th scope="col">USER_ADDRESS</th>-->
+<!--                        <th scope="col">ACTION</th>-->
+
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                    <tr th:each="od : ${items}">-->
+
+<!--                        <td th:text="${od.id}">-->
+
+<!--                        </td>-->
+<!--                        <td th:text="${od.date}">-->
+
+<!--                        </td>-->
+<!--                        <td th:text="${od.quantity}">&lt;!&ndash; Button trigger modal &ndash;&gt;-->
+
+<!--                        </td>-->
+<!--                        <td th:text="${od.product.name}">&lt;!&ndash; Button trigger modal &ndash;&gt;-->
+
+<!--                        </td>-->
+<!--                        <td th:text="${od.user.name}">&lt;!&ndash; Button trigger modal &ndash;&gt;-->
+
+<!--                        </td>-->
+<!--                        <td th:text="${od.user.addrs}">&lt;!&ndash; Button trigger modal &ndash;&gt;-->
+
+<!--                        </td>-->
+<!--                        <td><a-->
+<!--                               class="btn btn-danger btn-sm mt-4">Update Status</a></td>-->
+
+
+
+
+
+<!--                    </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--                <hr>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--        <div class="line"></div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash; Bootstrap JS & jQuery &ndash;&gt;-->
+<!--<script src="js/jquery-3.1.1.min.js"></script>-->
+<!--<script src="js/bootstrap.js"></script>-->
+<!--&lt;!&ndash; Popper.JS &ndash;&gt;-->
+<!--<script-->
+<!--        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"-->
+<!--        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--<script type="text/javascript" src="api/ajaxFetch.js"></script>-->
+
+<!--<script type="text/javascript">-->
+<!--		$(document).ready(function() {-->
+<!--			$('#sidebarCollapse').on('click', function() {-->
+<!--				$('#sidebar').toggleClass('active');-->
+<!--			});-->
+<!--		});-->
+<!--	</script>-->
+<!--</body>-->
+<!--</html>-->
